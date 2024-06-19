@@ -40,7 +40,7 @@
 #define SPI_DEFAULT         SPI_MASTER | SPI_FOSC_128 | SPI_MODE_0
 
 // SPI functions
-void SPI_init(uint16_t initParams);
-uint8_t SPI_transfer(uint8_t data);
+void SPI_init(void);
+uint8_t SPI_transfer(uint8_t x);
 
 #endif

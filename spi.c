@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <stdint.h>
 #include "spi.h"
 
 /*******************************************************************************
@@ -8,27 +9,16 @@
         Updated initialization functions
 *******************************************************************************/
 
-void SPI_init(uint16_t initParams)
-{
-    // set CS, MOSI and SCK to output
-    DDR_SPI |= (1 << CS) | (1 << MOSI) | (1 << SCK);
-
-    // enable pull up resistor in MISO
-    DDR_SPI |= (1 << MISO);
-
+void SPI_init(void) {
+	DDRB |= (1 << PB5) | (1 << PB7);
+	DDRB &= ~(1 << PB6);
     // set SPI params
-    SPCR = ((uint8_t) (initParams >> 8)) | (1 << SPE);
-    SPSR = ((uint8_t) initParams);
+	SPCR = (1 << SPE) | (1 << MSTR);
+	SPSR = 1 << SPI2X;
 }
 
-uint8_t SPI_transfer(uint8_t data)
-{
-    // load data into register
-    SPDR = data;
-
-    // Wait for transmission complete
-    while(!(SPSR & (1 << SPIF)));
-
-    // return SPDR
-    return SPDR;
+uint8_t SPI_transfer(uint8_t x) {
+		SPDR = x;
+		while(!(SPSR & (1<<SPIF)));
+		return SPDR;
 }
