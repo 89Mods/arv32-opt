@@ -1,7 +1,7 @@
 # arv32-opt
 
 ## What is this?
-This is a fork of of [arv32-opt](https://github.com/raspiduino/arv32-opt), but much, much faster. Using my [mini DDR2 controller](https://github.com/89Mods/mini-ddr2) for fast memory and a 25Q128 spiflash to hold the RAM image, the RISC-V emulator is sped up by orders of magnitude.
+This is a fork of of [arv32-opt](https://github.com/raspiduino/arv32-opt), but much, much faster. Using my [mini DDR2 controller](https://github.com/89Mods/mini-ddr2) for fast memory (a appropriately sized SRAM chip could also be used) and a 25Q128 spiflash to hold the RAM image, the RISC-V emulator is sped up by orders of magnitude.
 
 My setup boots to the bash prompt in **under 40 minutes** and is very usable afterwards, with keystrokes registering in one second or less.
 
