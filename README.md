@@ -18,7 +18,7 @@ I am hoping to get this down to less than 30 minutes with further optimization a
 I recommend using [this](https://protosupplies.com/product/pcb-smd-soic-8-msop-8-tssop-8-to-dip-adapter5-pack/) breakout board (the 25Q128 comes only in SMD) and the [CH341A](https://www.amazon.com/Programmer-Module-CH341A-Burner-5V-3-3V/dp/B07PFCJ8G9) programmer, as it is supported by the `flashrom` utility on Linux.
 
 ### Building the code
-- First, clone the repo: `git clone https://github.com/raspiduino/arv32-opt`. Then `cd arv32-opt`
+- First, clone the repo: `git clone https://github.com/89Mods/arv32-opt`. Then `cd arv32-opt`
 - Then use build the code using the following commands:
 ```cmd
 make clean
